@@ -1,0 +1,33 @@
+REGALO ROMÁNTICO — ANDREA ❤️
+
+Proyecto listo para abrir en Visual Studio Code.
+
+ARCHIVOS
+- index.html
+- style.css
+- script.js
+- assets/foto-ustedes.jpeg
+
+CÓMO ABRIRLO
+1. Extrae el ZIP.
+2. Abre la carpeta "regalo_andrea_jordy" en Visual Studio Code.
+3. Instala la extensión "Live Server".
+4. Haz clic derecho sobre index.html.
+5. Selecciona "Open with Live Server".
+
+MÚSICA
+La página usa el video de YouTube con ID TvoNFHOmjqg ("Eso Y Más").
+Al tocar el sobre se intenta iniciar la canción con volumen bajo (18%).
+El navegador/YouTube puede impedir la reproducción automática en algunos casos.
+No se descarga ni se extrae el audio de YouTube.
+
+FECHA DEL CONTADOR
+25/10/2026 a las 00:00, horario de Nicaragua (UTC-6).
+
+PARA CAMBIAR LA FOTO
+Reemplaza:
+assets/foto-ustedes.jpeg
+por otra foto manteniendo el mismo nombre.
+
+GALERÍA
+Se agregaron 6 fotos nuevas en assets/ y aparecen en la sección 'Nuestros momentos'.
