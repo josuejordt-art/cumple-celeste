@@ -1,0 +1,536 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pink: #d94f72;
+  --dark: #48232f;
+  --soft: #fff4f6;
+  --rose: #f6d8df;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(180deg, #fff7f8, #fdecef);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+/* =========================
+   PORTADA
+========================= */
+
+.cover {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  background: radial-gradient(circle at top, #fff, #f8dce4);
+}
+
+.cover-card {
+  text-align: center;
+  background: rgba(255, 255, 255, .78);
+  padding: 42px 28px;
+  border-radius: 28px;
+  box-shadow: 0 18px 60px rgba(100, 30, 50, .16);
+  max-width: 520px;
+  width: 100%;
+}
+
+.small-title,
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: var(--pink);
+}
+
+h1,
+h2 {
+  font-family: 'Allura', cursive;
+  font-weight: 400;
+}
+
+.cover h1 {
+  font-size: 65px;
+  margin: 8px 0;
+  color: var(--dark);
+}
+
+.cover-text {
+  margin-bottom: 28px;
+  color: #77515c;
+}
+
+/* =========================
+   SOBRE
+========================= */
+
+.envelope {
+  position: relative;
+  width: 190px;
+  height: 135px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  margin: 8px auto 15px;
+  display: block;
+  transition: transform .25s;
+}
+
+.envelope:hover {
+  transform: scale(1.04);
+}
+
+.envelope-back,
+.envelope-front {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: #e87994;
+  box-shadow: 0 12px 25px rgba(160, 50, 80, .22);
+}
+
+.envelope-front {
+  clip-path: polygon(
+    0 35%,
+    50% 70%,
+    100% 35%,
+    100% 100%,
+    0 100%
+  );
+}
+
+.envelope-flap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 80%;
+  background: #f08ca4;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 65%
+  );
+  transform-origin: top;
+  transition: transform .8s ease;
+  z-index: 3;
+}
+
+.envelope-paper {
+  position: absolute;
+  z-index: 2;
+  background: #fff9fa;
+  color: var(--pink);
+  width: 90px;
+  height: 75px;
+  left: 50px;
+  top: 35px;
+  border-radius: 5px;
+  font-size: 28px;
+  padding-top: 18px;
+  transition: transform .8s ease;
+}
+
+.envelope.open .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.open .envelope-paper {
+  transform: translateY(-55px);
+}
+
+.tap {
+  font-size: 13px;
+  color: #95616e;
+}
+
+.hidden {
+  display: none;
+}
+
+/* =========================
+   CONTENIDO PRINCIPAL
+========================= */
+
+.gift {
+  max-width: 850px;
+  margin: auto;
+  padding: 45px 18px 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 15px 0 30px;
+}
+
+.hero h2 {
+  font-size: 65px;
+  margin: 8px 0;
+}
+
+.hero h2 span {
+  color: var(--pink);
+}
+
+.phrase {
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.8;
+  color: #704d58;
+  font-size: 15px;
+}
+
+/* =========================
+   FOTO PRINCIPAL
+========================= */
+
+.photo-section {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-card {
+  background: white;
+  padding: 12px;
+  border-radius: 20px;
+  box-shadow: 0 16px 45px rgba(100, 30, 50, .16);
+  max-width: 520px;
+  transform: rotate(-1deg);
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  max-height: 620px;
+  object-fit: cover;
+  border-radius: 13px;
+}
+
+.photo-caption {
+  text-align: center;
+  padding: 14px 8px 5px;
+  font-family: 'Allura', cursive;
+  font-size: 25px;
+  color: var(--pink);
+}
+
+/* =========================
+   GALERÍA
+========================= */
+
+.gallery-section {
+  text-align: center;
+  padding: 45px 0 20px;
+}
+
+.gallery-section h3 {
+  font-size: 28px;
+  margin: 10px 0 8px;
+}
+
+.gallery-intro {
+  font-size: 13px;
+  color: #795963;
+  max-width: 600px;
+  margin: 0 auto 24px;
+  line-height: 1.7;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 720px;
+  margin: auto;
+}
+
+.gallery-item {
+  background: #fff;
+  padding: 7px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(100, 30, 50, .12);
+  overflow: hidden;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform .45s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+/* =========================
+   CONTADOR
+========================= */
+
+.countdown-section {
+  text-align: center;
+  padding: 55px 0 30px;
+}
+
+.countdown-section h3 {
+  font-size: 28px;
+  margin: 10px 0 18px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.countdown div {
+  background: #fff;
+  border-radius: 16px;
+  min-width: 105px;
+  padding: 18px 12px;
+  box-shadow: 0 10px 25px rgba(100, 30, 50, .09);
+}
+
+/* NÚMEROS GRANDES Y ROJOS */
+
+.countdown span {
+  display: block;
+  font-size: 55px;
+  font-weight: 700;
+  color: #d62839;
+  line-height: 1;
+  text-shadow: 0 2px 5px rgba(214, 40, 57, .25);
+}
+
+/* TEXTO DÍAS, HORAS, ETC. */
+
+.countdown small {
+  display: block;
+  margin-top: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #80616a;
+  letter-spacing: 1px;
+}
+
+.date {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #8b6570;
+}
+
+/* =========================
+   MENSAJE
+========================= */
+
+.message-card,
+.music-card,
+.letter-paper {
+  background: rgba(255, 255, 255, .82);
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(100, 30, 50, .09);
+}
+
+.message-card {
+  padding: 30px;
+  text-align: center;
+  line-height: 1.9;
+  margin: 25px 0;
+}
+
+.heart {
+  font-size: 32px;
+  color: var(--pink);
+  margin-bottom: 10px;
+}
+
+/* =========================
+   MÚSICA
+========================= */
+
+.music-card {
+  text-align: center;
+  padding: 30px;
+  margin: 25px 0;
+}
+
+.music-icon {
+  font-size: 38px;
+  color: var(--pink);
+}
+
+.music-card h3 {
+  margin: 7px 0;
+}
+
+.music-card p {
+  font-size: 13px;
+  color: #795963;
+}
+
+.music-btn {
+  margin-top: 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--pink);
+  color: white;
+  padding: 12px 22px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(217, 79, 114, .25);
+}
+
+.music-note {
+  margin-top: 12px !important;
+  font-family: 'Allura', cursive;
+  font-size: 22px !important;
+  color: var(--pink) !important;
+}
+
+.youtube-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  left: -9999px;
+  top: -9999px;
+  overflow: hidden;
+}
+
+/* =========================
+   CARTA
+========================= */
+
+.letter {
+  padding: 35px 0;
+}
+
+.letter .eyebrow {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.letter-paper {
+  padding: 32px;
+  line-height: 1.9;
+  background: #fffdf8;
+}
+
+.letter-paper h3 {
+  font-family: 'Allura', cursive;
+  font-size: 35px;
+  color: var(--pink);
+  margin-bottom: 15px;
+}
+
+.letter-paper p {
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.signature {
+  text-align: right;
+  margin-top: 25px !important;
+  font-family: 'Allura', cursive;
+  font-size: 23px !important;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+  padding: 35px 0 10px;
+  font-size: 12px;
+  color: #956775;
+}
+
+/* =========================
+   CORAZONES FLOTANDO
+========================= */
+
+.floating-heart {
+  position: fixed;
+  bottom: -30px;
+  font-size: 18px;
+  color: #e97994;
+  pointer-events: none;
+  animation: floatUp 5s linear forwards;
+  z-index: 20;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+  .cover h1,
+  .hero h2 {
+    font-size: 52px;
+  }
+
+  .gift {
+    padding-top: 25px;
+  }
+
+  /* CONTADOR EN CELULAR */
+
+  .countdown {
+    gap: 8px;
+  }
+
+  .countdown div {
+    min-width: 78px;
+    padding: 14px 8px;
+  }
+
+  .countdown span {
+    font-size: 38px;
+  }
+
+  .countdown small {
+    font-size: 9px;
+    letter-spacing: .5px;
+  }
+
+  .photo-card {
+    max-width: 95%;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item img {
+    height: 330px;
+  }
+
+  .countdown-section h3 {
+    font-size: 23px;
+  }
+
+  .message-card {
+    padding: 24px 18px;
+  }
+
+  .letter-paper {
+    padding: 25px 20px;
+  }
+}
